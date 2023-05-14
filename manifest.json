@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Releason",
+  "version": "0.1.0",
+  "description": "Get notified when your favorite stores relase!",
+  "permissions": ["storage", "scripting", "tabs", "background"],
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "icon128.png"
+  },
+  "externally_connectable": {
+    "matches": ["http://*.localhost:1234/*"]
+  }
+}

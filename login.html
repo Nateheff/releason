@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="./fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/regular.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/solid.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Prompt', poppins;
+        color: white;
+        background: black;
+        background-image: url('./js/login-bg.svg');
+      }
+
+      section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 300px;
+        padding-top: 10px;
+      }
+
+      h1 {
+        font-size: 5rem;
+        margin: 0;
+      }
+
+      header {
+        background: none;
+        height: 0px;
+      }
+
+      .container {
+        display: flex;
+        max-width: 400px;
+        max-height: 700px;
+        position: absolute;
+        background: #ffffff;
+        top: 50%;
+        left: 50%;
+        margin-right: 50%;
+        transform: translate(-50%, -50%);
+
+        padding: 15px;
+      }
+
+      .log-header {
+        display: block;
+        color: rgb(53, 53, 53);
+        width: 100%;
+        text-align: center;
+        font-size: xx-large;
+        font-weight: 600;
+      }
+
+      .form-login {
+        display: block;
+        color: rgb(53, 53, 53);
+        text-align: left;
+      }
+
+      .field {
+        display: block;
+        background-color: rgba(128, 128, 128, 0.196);
+        border: 0;
+        padding: 7px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 250px;
+        height: 25px;
+      }
+      .login {
+        margin-top: 10px;
+        width: 100%;
+        align-self: center;
+        border: 0;
+        height: 30px;
+        border-radius: 20px;
+        background-color: rgb(164, 78, 255);
+        color: #ffffff;
+        font-size: large;
+        font-weight: 700;
+      }
+
+      .login-text {
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      .signup {
+        border: 0;
+        background: none;
+      }
+      .sign-text {
+        text-decoration: none;
+        color: rgb(245, 113, 152);
+
+        font-weight: 600;
+      }
+    </style>
+
+    <script type="module" src="./js/controller.js"></script>
+  </head>
+
+  <!-- <header class="header">
+    <button class="header-sign-up">Sign Up</button>
+    <button class="header-login">Login</button>
+  </header>
+
+  <body>
+    <div class="spacer layer1"></div>
+    <img class="stars" src="./js/stars (1).png" />
+    <img class="moon" src="./js/moon (1).png" />
+    <img class="rocket" src="./js/astron (1).svg" />
+
+    <section class="orange">
+      <h1>Releason</h1>
+      <p>
+        Enter the url of the SHOP page of the site you would like to track and
+        the name of the store!
+      </p>
+      <form class="enter-url">
+        <input type="text" class="url__field" placeholder="URL..." />
+        <button class="btn btn__url">
+          <i class="fa-solid fa-location-dot"></i>
+          Enter
+        </button>
+      </form>
+      <form class="enter-name">
+        <input type="text" class="name__field" placeholder="Store Name" />
+        <button class="btn btn__name">Enter</button>
+      </form>
+    </section>
+    <div class="spacer layer2"></div>
+    <img class="chill" src="./js/astrona (1).svg" />
+
+    <section class="blue">
+      <h1>Your Stores</h1>
+      <p>Here's the list of your favorite stores you're currently tracking!</p>
+      <div class="saves">
+        <ul class="names">
+          <p class="title title-name">Names</p>
+          <li class="name">
+            <span class="saved-name">booHoo</span>
+          </li> -->
+  <!-- </ul>
+        <ul class="urls">
+          <p class="title title-url">URLs</p> -->
+  <!-- <li class="url">
+            <span class="saved-url">booHooh </span>
+          </li> 
+        </ul>
+      </div> 
+    </section>-->
+  <body id="login">
+    <div class="back">
+      <div class="container">
+        <form class="form-login">
+          <p class="log-header">Login</p>
+          <label for="email"><b>Email</b></label>
+          <input
+            type="email"
+            class="field field__email"
+            placeholder="Enter Email"
+          />
+          <label for="psw"><b>Password</b></label>
+          <input
+            type="password"
+            class="field field__psw"
+            placeholder="Enter Password"
+          />
+          <button class="login" type="submit">
+            Login
+            <!-- <a class="login-text" href="./index.html">Login</a> -->
+          </button>
+
+          <p class="not-already">
+            Don't have an account?
+            <button class="signup">
+              <a class="sign-text" href="./signup.html">Sign Up</a>
+            </button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

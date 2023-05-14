@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="./fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/regular.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/solid.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Prompt', poppins;
+        color: white;
+        background: black;
+      }
+
+      section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 300px;
+        padding-top: 10px;
+      }
+
+      h1 {
+        font-size: 5rem;
+        margin: 0;
+      }
+
+      header {
+        background: none;
+        height: 0px;
+      }
+      .stars {
+        z-index: 5;
+        background: transparent;
+        position: absolute;
+        top: -5px;
+      }
+      .moon {
+        z-index: 5;
+        background: transparent;
+        transform: scale(0.2);
+        position: absolute;
+        top: -175px;
+        float: left;
+      }
+
+      .rocket {
+        z-index: 5;
+        background: transparent;
+        transform: scale(0.1);
+        position: absolute;
+        top: -390px;
+        right: 520px;
+      }
+
+      .chill {
+        z-index: 5;
+        transform: scale(0.1);
+        background: transparent;
+        position: absolute;
+        top: 244px;
+        right: 650px;
+      }
+
+      .blue {
+        background: #41bec2;
+        padding: 0;
+      }
+
+      .orange {
+        background: #fd9d75;
+      }
+
+      .purple {
+        background: #6600ff;
+      }
+
+      .spacer {
+        aspect-ratio: 960/200;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .enter-url {
+        display: inline-block;
+        align-items: center;
+      }
+
+      .layer1 {
+        background-image: url('./js/layered-waves-haikei\ \(3\).svg');
+      }
+
+      .layer2 {
+        background-image: url('./js/layered-waves-haikei\ \(4\).svg');
+      }
+
+      .url__field {
+        border: none;
+        outline: none;
+        border-radius: 25px;
+        width: 700px;
+        height: 50px;
+        margin-top: 10px;
+
+        background-color: #eaeaea;
+        padding-left: 10px;
+        font-size: larger;
+        transition: transform 0.2s;
+      }
+
+      .url__field::placeholder {
+        font-family: poppins;
+        color: #bebebe;
+        font-size: 85%;
+      }
+      .url__field:focus {
+        transform: scale(1.002);
+      }
+
+      .btn__url {
+        z-index: 3;
+        display: inline-block;
+        position: relative;
+
+        width: 150px;
+        height: 50px;
+        border-radius: 5rem;
+        border: none;
+        text-align: center;
+        background-color: #fcbca0;
+        color: #ffffff;
+
+        font-weight: 500;
+
+        font-family: bebas neue;
+        font-size: x-large;
+        transition: transform 0.3s;
+      }
+      .btn__url:hover {
+        transform: scale(1.05);
+      }
+
+      .gradient1 {
+        background-image: linear-gradient(
+          to bottom right,
+          rgb(216, 253, 95),
+          rgb(74, 198, 255)
+        );
+      }
+
+      .header-login {
+        position: relative;
+        float: right;
+        right: 8%;
+        top: 65px;
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: x-large;
+        font-weight: 600;
+        transition: transform 0.3s;
+      }
+      .header-sign-up {
+        position: relative;
+        float: right;
+        right: 6%;
+        top: 65px;
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-size: x-large;
+        font-weight: 600;
+        transition: transform 0.3s;
+      }
+
+      .header-login:hover {
+        transform: scale(1.1);
+      }
+
+      .header-sign-up:hover {
+        transform: scale(1.1);
+      }
+      .enter-name {
+        display: none;
+      }
+      .name__field {
+        border: none;
+        outline: none;
+        border-radius: 25px;
+        width: 500px;
+        height: 50px;
+        margin-top: 20px;
+
+        background-color: #eaeaea;
+        padding-left: 10px;
+        font-size: larger;
+      }
+
+      .name__field::placeholder {
+        font-family: poppins;
+        color: #bebebe;
+        font-size: 85%;
+      }
+
+      .btn__name {
+        z-index: 3;
+        display: inline-block;
+        position: relative;
+
+        width: 150px;
+        height: 50px;
+        border-radius: 5rem;
+        border: none;
+        text-align: center;
+        background-color: #fcbca0;
+        color: #ffffff;
+
+        font-weight: 500;
+
+        font-family: bebas neue;
+        font-size: x-large;
+      }
+      .saves {
+        display: inline-flex;
+        align-self: flex-start;
+        margin-left: 50px;
+        margin-bottom: 50px;
+      }
+      .names {
+        position: relative;
+        max-width: 150px;
+      }
+      .title {
+        font-size: larger;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 40px;
+      }
+      .name {
+        list-style-type: none;
+      }
+      .saved-name {
+        font-size: medium;
+        font-weight: 500;
+
+        word-break: break-all;
+      }
+
+      .urls {
+        position: relative;
+        padding-left: 200px;
+        max-width: 750px;
+      }
+
+      .url {
+        list-style-type: none;
+      }
+
+      .saved-url {
+        font-size: large;
+        font-weight: 500;
+        color: azure;
+
+        word-break: break-all;
+        margin-bottom: 10px;
+      }
+      .copyright {
+        align-self: flex-start;
+        opacity: 0.8;
+        transform: scale(0.8);
+        margin-bottom: 0;
+      }
+      .invalid-url {
+        font-size: larger;
+        font-weight: 600;
+      }
+      .link {
+        text-decoration: none;
+        color: #ffffff;
+      }
+      .no-extension {
+        display: none;
+        width: 600px;
+      }
+      .hey {
+        display: inline-block;
+        transform: scale(2.9);
+        position: absolute;
+        top: 210px;
+      }
+      .woah {
+        text-align: center;
+        display: inline-block;
+        max-width: 600px;
+        position: relative;
+
+        left: 70px;
+        font-size: x-large;
+      }
+      .extension {
+        color: aliceblue;
+        font-weight: 600;
+      }
+    </style>
+
+    <script type="module" src="./js/controller.js"></script>
+  </head>
+
+  <header class="header">
+    <button class="header-sign-up">
+      <a class="link link_signup" href="signup.html">Sign Up</a>
+    </button>
+    <button class="header-login">
+      <a class="link link_login" href="login.html">Login</a>
+    </button>
+  </header>
+
+  <body id="index">
+    <div class="spacer layer1"></div>
+    <img class="stars" src="./js/stars (1).png" />
+    <img class="moon" src="./js/moon (1).png" />
+    <img class="rocket" src="./js/astron (1).svg" />
+
+    <section class="orange">
+      <h1>Releason</h1>
+      <p>
+        Enter the url of the SHOP page of the site you would like to track and
+        the name of the store!
+      </p>
+      <form class="enter-url">
+        <input type="text" class="url__field" placeholder="URL..." />
+        <button class="btn btn__url">
+          <i class="fa-solid fa-location-dot"></i>
+          Enter
+        </button>
+      </form>
+      <div class="no-extension">
+        <img class="hey" src="./js/hey.svg" />
+        <p class="woah">
+          <b>Hey there...</b> Install our extension to get started!
+          <a class="extension" href="">Install</a>
+        </p>
+      </div>
+
+      <form class="enter-name">
+        <input type="text" class="name__field" placeholder="Store Name" />
+        <button class="btn btn__name">Enter</button>
+      </form>
+    </section>
+    <div class="spacer layer2"></div>
+    <img class="chill" src="./js/astrona (1).svg" />
+
+    <section class="blue">
+      <h1>Your Stores</h1>
+      <p>Here's the list of your favorite stores you're currently tracking!</p>
+      <div class="saves">
+        <ul class="names">
+          <p class="title title-name">Names</p>
+          <!-- <li class="name">
+            <span class="saved-name">booHoo</span>
+          </li> -->
+        </ul>
+        <ul class="urls">
+          <p class="title title-url">URLs</p>
+          <!-- <li class="url">
+            <span class="saved-url">booHooh </span>
+          </li> -->
+        </ul>
+      </div>
+      <p class="copyright">
+        &copy; Copyright by
+        <a>Nathan Heffington</a>
+      </p>
+    </section>
+  </body>
+</html>
