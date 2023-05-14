@@ -74,26 +74,26 @@ export const getStuff = async function (url) {
   return { url, doc };
 };
 
-export const runCheck = function () {
-  chrome.runtime.sendMessage(
-    extensionId,
-    { message: 'version' },
-    function (reply) {
-      console.log(reply);
-      if (reply) {
-        if (reply.version) {
-          if (reply.version >= 1) {
-            hasExtension = true;
-            checkExtension(hasExtension);
-          }
-        }
-      } else {
-        hasExtension = false;
-        checkExtension(hasExtension);
-      }
-    }
-  );
-};
+// export const runCheck = function () {
+//   chrome.runtime.sendMessage(
+//     extensionId,
+//     { message: 'version' },
+//     function (reply) {
+//       console.log(reply);
+//       if (reply) {
+//         if (reply.version) {
+//           if (reply.version >= 1) {
+//             hasExtension = true;
+//             checkExtension(hasExtension);
+//           }
+//         }
+//       } else {
+//         hasExtension = false;
+//         checkExtension(hasExtension);
+//       }
+//     }
+//   );
+// };
 
 export const getAllURLS = async function () {
   const querySnapshot = await getDocs(collection(db, 'logins'));

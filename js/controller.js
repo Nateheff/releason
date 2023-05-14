@@ -16,7 +16,7 @@ const g = async function () {
   const synch = await model.getStuff('https://synchtec.net/collections/all');
   console.log(synch);
 };
-model.runCheck();
+// model.runCheck();
 
 g();
 
@@ -122,9 +122,9 @@ if (id === 'login') {
   init();
 }
 
-export const checkExtension = function (hasEx) {
-  console.log(hasEx);
-  if (hasEx === false) {
-    enterURLView.requireExt();
-  } else return true;
-};
+// export const checkExtension = function (hasEx) {
+//   console.log(hasEx);
+//   if (hasEx === false) {
+//     enterURLView.requireExt();
+//   } else return true;
+// };
