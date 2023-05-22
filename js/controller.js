@@ -85,7 +85,7 @@ if (id === 'signup') {
 
       console.log(model.state.users);
       sessionStorage.setItem('status', 'loggedIn');
-      window.location.href = 'http://localhost:1234/index.html';
+      window.location.href = 'http://releason.herokuapp.com/index.html';
     } catch (err) {
       console.error(err);
     }
@@ -109,7 +109,7 @@ if (id === 'login') {
         sessionStorage.setItem('Id', id);
 
         sessionStorage.setItem('status', 'loggedIn');
-        window.location.href = 'http://localhost:1234/index.html';
+        window.location.href = 'http://releason.herokuapp.com/index.html';
       }
     } catch (err) {
       alert(err);

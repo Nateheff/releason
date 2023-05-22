@@ -67,6 +67,7 @@ export const getStuff = async function (url) {
   );
   const data = await res.json();
   const str = data.contents;
+
   const doc = document.implementation.createHTMLDocument('');
   doc.open();
   doc.write(`${str}`);
