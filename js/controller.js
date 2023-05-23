@@ -70,15 +70,17 @@ if (id === 'signup') {
   const signUpController = async function (data) {
     try {
       console.log('okay');
+      const accs = await model.getAllURLS();
+      const emails = accs.flatMap(acc => acc.email);
+      if (emails.includes(data.email)) {
+        alert(
+          'An account already exists with that email. Please login or try a different email'
+        );
+        return;
+      }
       await model.setLoginInfo(data);
 
-      const emails = model.state.users.map(user => user.email);
-      if (emails.includes(data[0])) {
-        alert('An account under that email alreayd exists. Please sign in!');
-        return;
-      } else {
-        await model.getNewLoginInfo();
-      }
+      await model.getNewLoginInfo();
 
       const id = await model.getId(data);
       sessionStorage.setItem('Id', id);

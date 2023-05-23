@@ -7,7 +7,7 @@ class SignUpView {
       const email = document.querySelector('.field__email').value;
       const password = document.querySelector('.field__psw').value;
       if ([...email].length >= 5 || [...password].length >= 1) {
-        handler([email, password]);
+        handler({ email: email, psw: password });
       } else {
         alert(`Please check your inputs`);
       }
