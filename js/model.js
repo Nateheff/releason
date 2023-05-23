@@ -116,13 +116,15 @@ export const setNames = async function (name, id) {
 
 export const setLoginInfo = async function (data) {
   try {
+    console.log(data);
     const docRef = await addDoc(collection(db, 'logins'), {
-      email: data[0],
-      password: data[1],
+      email: data.email,
+      password: data.psw,
     });
     console.log('Document written with id:', docRef.id);
   } catch (err) {
     console.error(err);
+    throw new Error(err);
   }
 };
 
@@ -208,8 +210,9 @@ export const getId = async function (data) {
   const email = savedData.findIndex(
     user =>
       String(user[0].email).toLocaleLowerCase() ===
-      String(data[0]).toLocaleLowerCase()
+      String(data.email).toLocaleLowerCase()
   );
+  console.log(email);
 
   const user = savedData[email];
   const id = user[1];

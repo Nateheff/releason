@@ -69,7 +69,7 @@ if (id === 'signup') {
 
   const signUpController = async function (data) {
     try {
-      console.log('okay');
+      console.log(data);
       const accs = await model.getAllURLS();
       console.log(accs);
       const emails = accs.map(acc => acc.email);
@@ -86,7 +86,6 @@ if (id === 'signup') {
       const id = await model.getId(data);
       sessionStorage.setItem('Id', id);
 
-      console.log(model.state.users);
       sessionStorage.setItem('status', 'loggedIn');
       window.location.href = 'https://releason.herokuapp.com';
     } catch (err) {
