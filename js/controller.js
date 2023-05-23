@@ -71,7 +71,8 @@ if (id === 'signup') {
     try {
       console.log('okay');
       const accs = await model.getAllURLS();
-      const emails = accs.flatMap(acc => acc.email);
+      console.log(accs);
+      const emails = accs.map(acc => acc.email);
       if (emails.includes(data.email)) {
         alert(
           'An account already exists with that email. Please login or try a different email'

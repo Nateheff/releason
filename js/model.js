@@ -105,7 +105,7 @@ export const getAllURLS = async function () {
     const acc = { email: doc.data().email, urls: doc.data().urls };
     accs.push(acc);
   });
-  console.log(accs);
+  return accs;
 };
 
 export const setNames = async function (name, id) {
