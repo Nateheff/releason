@@ -219,7 +219,7 @@ export const checkLogin = async function (data) {
   const email = savedData.findIndex(
     user =>
       String(user[0].email).toLocaleLowerCase() ===
-      String(data[0]).toLocaleLowerCase()
+      String(data.email).toLocaleLowerCase()
   );
 
   const oneMore = savedData[email];
@@ -229,7 +229,7 @@ export const checkLogin = async function (data) {
     return false;
   }
 
-  if (psw === data[1]) {
+  if (psw === data.password) {
     return true;
   } else {
     return false;

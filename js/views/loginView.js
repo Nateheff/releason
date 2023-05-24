@@ -8,7 +8,7 @@ class LoginView {
       const email = document.querySelector('.field__email').value;
       const password = document.querySelector('.field__psw').value;
 
-      handler([email, password]);
+      handler({ email: email, password: password });
     });
   }
 }
