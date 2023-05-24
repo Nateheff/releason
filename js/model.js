@@ -116,7 +116,6 @@ export const setNames = async function (name, id) {
 
 export const setLoginInfo = async function (data) {
   try {
-    console.log(data);
     const docRef = await addDoc(collection(db, 'logins'), {
       email: data.email,
       password: data.psw,
@@ -132,8 +131,6 @@ export const getNewLoginInfo = async function () {
   const querySnapshot = await getDocs(collection(db, 'logins'));
 
   querySnapshot.forEach(doc => {
-    console.log(doc.id, doc.data());
-
     state.users.push(doc.data());
   });
 };
@@ -141,7 +138,6 @@ export const getLoginInfo = async function () {
   const querySnapshot = await getDocs(collection(db, 'logins'));
   const data = [];
   querySnapshot.forEach(doc => {
-    console.log(doc.id, doc.data());
     data.push([doc.data(), doc.id]);
   });
   return data;
@@ -193,7 +189,6 @@ export const trackURLs = function (url) {
 export const getNames = async function (id) {
   const somethin = await getDoc(doc(db, 'logins', `${id}`));
   const names = somethin.data().names;
-  console.log(names);
 
   return names;
 };
@@ -206,13 +201,12 @@ export const addNewUser = function (data) {
 
 export const getId = async function (data) {
   const savedData = await getLoginInfo();
-  console.log(savedData);
+
   const email = savedData.findIndex(
     user =>
       String(user[0].email).toLocaleLowerCase() ===
       String(data.email).toLocaleLowerCase()
   );
-  console.log(email);
 
   const user = savedData[email];
   const id = user[1];
@@ -220,16 +214,14 @@ export const getId = async function (data) {
 };
 
 export const checkLogin = async function (data) {
-  console.log(data);
   const savedData = await getLoginInfo();
-  console.log(savedData);
+
   const email = savedData.findIndex(
     user =>
       String(user[0].email).toLocaleLowerCase() ===
       String(data[0]).toLocaleLowerCase()
   );
 
-  console.log(email);
   const oneMore = savedData[email];
   const psw = oneMore[0].password;
 

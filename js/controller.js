@@ -11,10 +11,9 @@ const id = document.body.id;
 
 const g = async function () {
   const saveData = await model.getLoginInfo();
-  console.log(saveData);
+
   model.getAllURLS();
   const synch = await model.getStuff('https://synchtec.net/collections/all');
-  console.log(synch);
 };
 // model.runCheck();
 
@@ -45,8 +44,6 @@ if (document.body.id === 'index' && sessionStorage.getItem('status') != null) {
     const urls = await model.getUrls(id);
 
     if (!urls) return;
-    console.log(names, urls);
-    console.log(urls);
 
     enterNameView.renderName(names);
     enterURLView.renderURL(urls);
@@ -69,9 +66,8 @@ if (id === 'signup') {
 
   const signUpController = async function (data) {
     try {
-      console.log(data);
       const accs = await model.getAllURLS();
-      console.log(accs);
+
       const emails = accs.map(acc => acc.email);
       if (emails.includes(data.email)) {
         alert(
